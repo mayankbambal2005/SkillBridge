@@ -33,57 +33,51 @@ SkillBridge is a full-stack platform where people trade skills instead of money 
 
 ##  Architecture
 
-SkillBridge is built as a set of containerized services:
+The full SkillBridge system is designed as a set of services:
 
-1. **Frontend** — React/TypeScript SPA
+1. **Frontend** — React/TypeScript SPA *(this repo)*
 2. **Core API** — Spring Boot REST backend (users, tokens, matching)
 3. **Signaling server** — Spring Boot WebSocket server for WebRTC video session setup
 4. **Chat service** — WebSocket-based real-time messaging, backed by MongoDB
 5. **AI assessment service** — LangChain4j engine for evaluating skills
 6. **Redis cache** — speeds up match retrieval
 
-*(Diagram coming soon — will add once finalized.)*
+> Note: This repository currently contains the frontend. Backend services are in development / will be added as a separate repo or subfolder.
 
 ---
 
-## Getting Started
+##  Getting Started
 
 ### Prerequisites
-- Docker & Docker Compose
-- Node.js (for local frontend development)
-- Java 17+ and Maven (for local backend development)
+- Node.js (v18+ recommended)
+- npm
 
-### Run with Docker (recommended)
+### Installation
 ```bash
 git clone https://github.com/mayankbambal2005/SkillBridge.git
 cd SkillBridge
-docker-compose up --build
-```
-The app should then be available at `http://localhost:3000` (adjust if your setup uses a different port).
-
-### Run frontend only (development mode)
-```bash
-cd frontend   # or wherever the React app lives
 npm install
+```
+
+### Running locally
+```bash
 npm run dev
 ```
-
-### Environment variables
-Create a `.env` file based on `.env.example` (if present) with values for:
-```
-MONGODB_URI=
-REDIS_URL=
-LANGCHAIN_API_KEY=
-```
+This should start the app on `http://localhost:5173` (default Vite port — adjust if yours differs).
 
 ---
 
 ##  Project Structure
 ```
 SkillBridge/
-├── frontend/        # React + TypeScript client
-├── backend/         # Spring Boot services
-├── docker-compose.yml
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── data/
+│   └── utils/
+├── index.html
+├── vite.config.ts
+├── tsconfig.json
 └── README.md
 ```
 
@@ -96,5 +90,5 @@ SkillBridge/
 
 ---
 
-##  Author
+## 📄 Author
 **Mayank Bambal** — [GitHub](https://github.com/mayankbambal2005) · [LinkedIn](https://linkedin.com/in/mayank-bambal-725835410)
