@@ -31,7 +31,7 @@ SkillBridge is a full-stack platform where people trade skills instead of money 
 
 ---
 
-## ⚙️ Architecture
+##  Architecture
 
 SkillBridge is built as a set of containerized services:
 
